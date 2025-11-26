@@ -1,0 +1,375 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: 'PT Root UI';
+  src: url(fonts/f82344daaacb5424b169.woff),
+    url(fonts/f31c5219b0912845f393.woff2);
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'PT Root UI';
+  src: url(fonts/e24244df074291681cd3.woff),
+    url(fonts/6f2ccf4ac327e1d6507e.woff2);
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'PT Root UI';
+  src: url(fonts/ea7178e3e5d27a1d3248.woff),
+    url(fonts/b43dba986b9cde356afd.woff2);
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'PT Root UI';
+  src: url(fonts/8bf08d3a5b04f523d0d4.woff),
+    url(fonts/f0497492db8214d4938e.woff2);
+  font-weight: 300;
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: calc(1vw / 14.4);
+}
+body {
+  font-family: 'PT Root UI', Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+}
+main {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  width: 70%;
+  margin: 0 auto;
+  /* background-color: #ddd; */
+  background: linear-gradient(
+    135deg,
+    rgba(209, 209, 209, 1) 0%,
+    rgb(184, 187, 209) 20%,
+    rgba(207, 207, 207, 1) 47%,
+    rgb(209, 213, 231) 77%,
+    rgba(224, 224, 224, 1) 100%
+  );
+  /* background: radial-gradient(circle at 100% 0%, #b6cde8, transparent 60%),
+    linear-gradient(65deg, #dfdfdf, rgb(190, 190, 190) 50%); */
+  border-radius: 30rem;
+}
+section {
+  position: relative;
+  height: 100%;
+}
+#poster {
+  width: 50%;
+  border-radius: 30rem;
+  overflow: hidden;
+}
+#description {
+  width: 50%;
+  height: 100%;
+  padding: 20rem;
+}
+#desription article {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-end;
+}
+#description h1 {
+  font-size: 52rem;
+  font-weight: 500;
+}
+#description p {
+  font-size: 20rem;
+}
+#description article {
+  display: flex;
+  flex-direction: column;
+  gap: 40rem;
+}
+.descriptionNames {
+  display: flex;
+  gap: 40rem;
+}
+.descriptionColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 20rem;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    align-items: flex-start;
+  }
+  main {
+    flex-direction: column;
+    width: 100%;
+  }
+  section,
+  #poster,
+  #description {
+    width: 100%;
+  }
+  #description {
+    padding: 40rem;
+  }
+  #description h1 {
+    font-size: 70rem;
+  }
+  #description p {
+    font-size: 40rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #description {
+    padding: 60rem;
+    margin-top: 300rem;
+  }
+  #description article {
+    gap: 60rem;
+  }
+  #description h1 {
+    font-size: 120rem;
+  }
+  #description p {
+    font-size: 80rem;
+  }
+}
+
+:root {
+  /* Inner shadow */
+  --shadow-offset: 0;
+  --shadow-blur: 20px;
+  --shadow-spread: -5px;
+  --shadow-color: rgba(190, 190, 190, 0.7);
+
+  /* Painted glass */
+  --tint-color: 125, 125, 125;
+  --tint-opacity: 0.4;
+
+  /* Background frost */
+  --frost-blur: 2px;
+
+  /* SVG noise/distortion */
+  --noise-frequency: 0.008;
+  --distortion-strength: 77;
+
+  /* Outer shadow blur */
+  --outer-shadow-blur: 24px;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #fff;
+}
+canvas {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+}
+
+.box {
+  width: 40%;
+  height: 70%;
+  position: absolute;
+  top: 15%;
+  left: calc(50% - 12vw);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  isolation: isolate;
+  touch-action: none;
+  box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.2);
+}
+.box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  box-shadow: inset var(--shadow-offset) var(--shadow-offset) var(--shadow-blur)
+    var(--shadow-spread) var(--shadow-color);
+  background-color: rgba(var(--tint-color), var(--tint-opacity));
+}
+.box::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  backdrop-filter: blur(var(--frost-blur));
+  filter: url(#glass-distortion);
+  isolation: isolate;
+  -webkit-backdrop-filter: blur(var(--frost-blur));
+  -webkit-filter: url(#glass-distortion);
+}
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  /* padding: 2vw 0; */
+  border-bottom: 1px solid blue;
+  position: relative;
+  height: 12vw;
+}
+.marquee:nth-of-type(2) {
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  background-color: white;
+  border: none;
+  border-top: 1px solid blue;
+  bottom: 0;
+}
+h1 {
+  font: 10vw Arial;
+  padding: 10px 20px;
+  line-height: 1;
+  margin: 0;
+  color: transparent;
+  text-stroke: 1.4px blue;
+  -webkit-text-stroke: 1.4px blue;
+  text-transform: uppercase;
+  position: absolute;
+  width: 430%;
+  height: 100%;
+  animation: marquee 16s linear infinite;
+}
+@keyframes marquee {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -215%;
+  }
+}
+

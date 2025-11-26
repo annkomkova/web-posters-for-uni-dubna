@@ -1,0 +1,108 @@
+@import 'reset.css';
+@import 'fonts.css';
+@import 'base.css';
+
+:root {
+  /* Inner shadow */
+  --shadow-offset: 0;
+  --shadow-blur: 20px;
+  --shadow-spread: -5px;
+  --shadow-color: rgba(190, 190, 190, 0.7);
+
+  /* Painted glass */
+  --tint-color: 125, 125, 125;
+  --tint-opacity: 0.4;
+
+  /* Background frost */
+  --frost-blur: 2px;
+
+  /* SVG noise/distortion */
+  --noise-frequency: 0.008;
+  --distortion-strength: 77;
+
+  /* Outer shadow blur */
+  --outer-shadow-blur: 24px;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #fff;
+}
+canvas {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+}
+
+.box {
+  width: 40%;
+  height: 70%;
+  position: absolute;
+  top: 15%;
+  left: calc(50% - 12vw);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  isolation: isolate;
+  touch-action: none;
+  box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.2);
+}
+.box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  box-shadow: inset var(--shadow-offset) var(--shadow-offset) var(--shadow-blur)
+    var(--shadow-spread) var(--shadow-color);
+  background-color: rgba(var(--tint-color), var(--tint-opacity));
+}
+.box::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  backdrop-filter: blur(var(--frost-blur));
+  filter: url(#glass-distortion);
+  isolation: isolate;
+  -webkit-backdrop-filter: blur(var(--frost-blur));
+  -webkit-filter: url(#glass-distortion);
+}
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  /* padding: 2vw 0; */
+  border-bottom: 1px solid blue;
+  position: relative;
+  height: 12vw;
+}
+.marquee:nth-of-type(2) {
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  background-color: white;
+  border: none;
+  border-top: 1px solid blue;
+  bottom: 0;
+}
+h1 {
+  font: 10vw Arial;
+  padding: 10px 20px;
+  line-height: 1;
+  margin: 0;
+  color: transparent;
+  text-stroke: 1.4px blue;
+  -webkit-text-stroke: 1.4px blue;
+  text-transform: uppercase;
+  position: absolute;
+  width: 430%;
+  height: 100%;
+  animation: marquee 16s linear infinite;
+}
+@keyframes marquee {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -215%;
+  }
+}

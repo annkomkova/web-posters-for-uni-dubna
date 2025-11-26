@@ -1,0 +1,456 @@
+@import url(https://fonts.googleapis.com/css2?family=Rock+3D&display=swap);
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: calc(1vw / 14.4);
+}
+body {
+  font-family: 'PT Root UI', Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+}
+main {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  width: 70%;
+  margin: 0 auto;
+  /* background-color: #ddd; */
+  background: linear-gradient(
+    135deg,
+    rgba(209, 209, 209, 1) 0%,
+    rgb(184, 187, 209) 20%,
+    rgba(207, 207, 207, 1) 47%,
+    rgb(209, 213, 231) 77%,
+    rgba(224, 224, 224, 1) 100%
+  );
+  /* background: radial-gradient(circle at 100% 0%, #b6cde8, transparent 60%),
+    linear-gradient(65deg, #dfdfdf, rgb(190, 190, 190) 50%); */
+  border-radius: 30rem;
+}
+section {
+  position: relative;
+  height: 100%;
+}
+#poster {
+  width: 50%;
+  border-radius: 30rem;
+  overflow: hidden;
+}
+#description {
+  width: 50%;
+  height: 100%;
+  padding: 20rem;
+}
+#desription article {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-end;
+}
+#description h1 {
+  font-size: 52rem;
+  font-weight: 500;
+}
+#description p {
+  font-size: 20rem;
+}
+#description article {
+  display: flex;
+  flex-direction: column;
+  gap: 40rem;
+}
+.descriptionNames {
+  display: flex;
+  gap: 40rem;
+}
+.descriptionColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 20rem;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    align-items: flex-start;
+  }
+  main {
+    flex-direction: column;
+    width: 100%;
+  }
+  section,
+  #poster,
+  #description {
+    width: 100%;
+  }
+  #description {
+    padding: 40rem;
+  }
+  #description h1 {
+    font-size: 70rem;
+  }
+  #description p {
+    font-size: 40rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #description {
+    padding: 60rem;
+    margin-top: 300rem;
+  }
+  #description article {
+    gap: 60rem;
+  }
+  #description h1 {
+    font-size: 120rem;
+  }
+  #description p {
+    font-size: 80rem;
+  }
+}
+
+#poster {
+  width: calc(1190rem / 2.3);
+  height: calc(1660rem / 2.3);
+  position: relative;
+  background-color: white;
+  background-image: url(images/7d209e17ec0e6d92767d.svg);
+  background-size: cover;
+}
+#poster h1,
+#poster h1::after {
+  font-family: 'Rock 3D', system-ui;
+  font-weight: 400;
+  font-size: 40rem;
+  color: #4a4aff;
+  text-transform: uppercase;
+  z-index: 2;
+}
+#poster h1 {
+  width: 70%;
+  -webkit-text-stroke: 0.3rem #4a4aff;
+  position: relative;
+  margin: 50rem 0 0 50rem;
+}
+#poster h1::after {
+  content: 'Island of stability';
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 1rem;
+}
+.pixels {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.pixels img {
+  width: 100%;
+}
+.pixels::after {
+  content: '';
+  position: absolute;
+  top: 5%;
+  right: 0;
+  width: 4rem;
+  height: 4rem;
+  background-color: white;
+  animation: glitch 4s steps(40) infinite alternate;
+}
+.human {
+  width: 15rem;
+  height: 15rem;
+  background-image: url(images/e35efc8c1dde564c4f06.svg);
+  background-size: 75rem 15rem;
+  background-position: -30rem 0;
+  position: absolute;
+  animation: human 6s steps(1) infinite reverse;
+}
+.human:nth-of-type(1) {
+  top: 150rem;
+  left: 300rem;
+}
+.human:nth-of-type(2) {
+  top: 200rem;
+  left: 250rem;
+}
+.human:nth-of-type(3) {
+  top: 230rem;
+  left: 80rem;
+}
+.human:nth-of-type(4) {
+  top: 240rem;
+  left: 410rem;
+}
+.human:nth-of-type(5) {
+  top: 400rem;
+  left: 120rem;
+}
+.human:nth-of-type(6) {
+  top: 370rem;
+  left: 136rem;
+}
+.human:nth-of-type(7) {
+  top: 430rem;
+  left: 330rem;
+}
+.human:nth-of-type(8) {
+  top: 550rem;
+  left: 405rem;
+}
+.human:nth-of-type(9) {
+  top: 565rem;
+  left: 285rem;
+}
+.human:nth-of-type(10) {
+  top: 579rem;
+  left: 208rem;
+}
+@keyframes human {
+  2% {
+    background-position: 0 0;
+  }
+  4% {
+    background-position: -15rem 0;
+  }
+  6% {
+    background-position: -30rem 0;
+  }
+  8% {
+    background-position: -45rem 0;
+  }
+  10% {
+    background-position: -60rem 0;
+  }
+  12% {
+    background-position: -45rem 0;
+  }
+  14% {
+    background-position: -30rem 0;
+  }
+  16% {
+    background-position: -15rem 0;
+  }
+  18% {
+    background-position: 0 0;
+  }
+  20% {
+    background-position: -15rem 0;
+  }
+  22% {
+    background-position: -30rem 0;
+  }
+  24% {
+    background-position: -45rem 0;
+  }
+  26% {
+    background-position: -60rem 0;
+  }
+  28% {
+    background-position: -45rem 0;
+  }
+  30% {
+    background-position: -30rem 0;
+  }
+}
+@keyframes glitch {
+  0% {
+    top: 4%;
+  }
+  10% {
+    /* width: 20%; */
+    right: 10%;
+  }
+  20% {
+    /* width: 13%; */
+    right: 4%;
+  }
+  30% {
+    /* width: 6%; */
+    right: 30%;
+  }
+  40% {
+    /* width: 12%; */
+    right: 20%;
+  }
+  50% {
+    /* width: 40%; */
+    right: 30%;
+  }
+  60% {
+    /* width: 22%; */
+    right: 50%;
+  }
+  70% {
+    /* width: 5%; */
+    right: 70%;
+  }
+  80% {
+    /* width: 30%; */
+    right: 60%;
+  }
+  90% {
+    /* width: 30%; */
+    right: 88%;
+  }
+  100% {
+    top: 96%;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  main {
+    width: 96%;
+  }
+  #poster {
+    width: calc(1190rem / 1.6);
+    height: calc(1684rem / 1.6);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    width: 100%;
+  }
+  #poster {
+    width: 100%;
+    height: 141.42vw;
+  }
+}
+

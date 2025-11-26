@@ -1,0 +1,1 @@
+(()=>{"use strict";document.querySelectorAll(".human").forEach(function(o){var a=Math.floor(-20*Math.random());o.style.animationDelay="".concat(a,"s"),console.log(a)})})();

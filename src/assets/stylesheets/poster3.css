@@ -1,0 +1,128 @@
+@import 'reset.css';
+@import 'base.css';
+
+#poster {
+  width: calc(1190rem / 2.3);
+  height: calc(1684rem / 2.3);
+  background: linear-gradient(180deg, #595959 0%, #bfbfbf 100%);
+  position: relative;
+}
+.header {
+  width: 100%;
+}
+.personWrapper {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+.person {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+.personWrapper::before,
+.personWrapper::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: contain;
+}
+.personWrapper::before {
+  z-index: 1;
+  background-image: url('../images/poster3/black-pattern.svg');
+  animation: glitchBefore 8s infinite ease-in-out alternate;
+}
+.personWrapper::after {
+  z-index: 3;
+  background-image: url('../images/poster3/grey-pattern.svg');
+  opacity: 0.5;
+  animation: glitchBefore 8s infinite ease-in-out alternate 5s;
+}
+.cursor {
+  width: 12rem;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  z-index: 5;
+  animation: rotateCursor 10s infinite ease alternate;
+}
+@keyframes rotateCursor {
+  0% {
+    transform: rotate(0deg) translateY(100rem) rotate(0deg);
+  }
+  0% {
+    transform: rotate(1turn) translateY(100rem) rotate(-1turn);
+  }
+}
+@keyframes moveCursor {
+  0% {
+    top: 200rem;
+    left: 20rem;
+  }
+  20% {
+    top: 180rem;
+    left: 400rem;
+  }
+  40% {
+    top: 400rem;
+    left: 180rem;
+  }
+  60% {
+    top: 480rem;
+    left: 80rem;
+  }
+  80% {
+    top: 300rem;
+    left: 150rem;
+  }
+}
+@keyframes glitchBefore {
+  0% {
+    clip-path: inset(0 0 0 0);
+  }
+  4% {
+    clip-path: inset(10% 0 65% 0);
+  }
+  6% {
+    clip-path: inset(40% 0 20% 0);
+  }
+  8% {
+    clip-path: inset(5% 0 55% 0);
+  }
+  10% {
+    clip-path: inset(30% 0 30% 0);
+  }
+  12% {
+    clip-path: inset(0 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  main {
+    width: 96%;
+  }
+  #poster {
+    width: calc(1190rem / 1.6);
+    height: calc(1684rem / 1.6);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    width: 100%;
+  }
+  #poster {
+    width: 100%;
+    height: 141.42vw;
+  }
+}
+
+@media screen and (max-width: 480px) {
+}
