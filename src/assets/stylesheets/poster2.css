@@ -3,15 +3,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import 'base.css';
 
-html {
-  font-size: calc(1vw / 11.9);
-}
 #poster h1 {
   font-family: 'Instrument Serif', serif;
   font-weight: 400;
   font-style: normal;
   font-size: 61rem;
   line-height: 1;
+  text-align: center;
   text-transform: uppercase;
   background: linear-gradient(
     90deg,
@@ -49,6 +47,7 @@ video {
   height: 420rem;
   object-fit: cover;
   object-position: center;
+  margin: 80rem 0;
 }
 footer {
   display: flex;
@@ -73,33 +72,22 @@ footer {
 @media screen and (max-width: 1024px) {
   video {
     height: 525rem;
+    margin: 50rem 0;
   }
 }
 
 @media screen and (max-width: 768px) {
-  html {
-    font-size: calc(1vw / 6);
-  }
   #poster p {
-    font-size: 14rem;
+    font-size: 40rem;
   }
   #juno {
-    gap: 30rem;
-    padding-bottom: 30rem;
+    gap: 50rem;
+    padding: 50rem 50rem 100rem;
   }
   video {
-    height: 625rem;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  html {
-    font-size: calc(1vw / 4.8);
-  }
-  video {
-    height: 600rem;
+    height: 1200rem;
   }
   #poster h1 {
-    font-size: 70rem;
+    font-size: 190rem;
   }
 }

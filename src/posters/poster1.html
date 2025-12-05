@@ -3,54 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Веб-плакат "Суперкомпьютер 'Говорун'"</title>
+    <title>Веб-плакат «Суперконденсатор»</title>
   </head>
   <body>
     <main>
+      <a href="../index.html" class="arrow"></a>
       <section id="poster">
-        <div class="marquee">
-          <h1>суперконденсатор суперконденсатор</h1>
-        </div>
-        <div class="marquee">
-          <h1>тонкий плоский тонкий плоский</h1>
-        </div>
-        <div class="box"></div>
-        <canvas id="c"></canvas>
-
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="0"
-          height="0"
-          style="position: absolute; overflow: hidden"
-        >
-          <defs>
-            <filter
-              id="glass-distortion"
-              x="0%"
-              y="0%"
-              width="100%"
-              height="100%"
-            >
-              <feTurbulence
-                type="fractalNoise"
-                baseFrequency="0.008 0.008"
-                numOctaves="2"
-                seed="92"
-                result="noise"
-              />
-              <feGaussianBlur in="noise" stdDeviation="2" result="blurred" />
-              <feDisplacementMap
-                in="SourceGraphic"
-                in2="blurred"
-                scale="77"
-                xChannelSelector="R"
-                yChannelSelector="G"
-              />
-            </filter>
-          </defs>
-        </svg>
+        <video muted autoplay playsinline loop>
+          <source src="../assets/images/poster1/video.mp4" type="video/mp4" />
+        </video>
       </section>
-      <section id="description"></section>
+      <section id="description">
+        <h1>«Суперконденсатор»</h1>
+        <p class="role">Дизайн и анимация</p>
+        <p>Анна Комкова</p>
+        <blockquote>
+          <p>
+            Суперконденсатор — плоскоt тонкое устройство толщиной всего 0.6мм,
+            изготавливается из пористого углерода и углеродного нанокомпозита.
+            Мне хотелось через прозрачность передать хрупкость и невероятную
+            тонкость устройства, а за счёт искажения текста передать эффект
+            накопления энергии.
+          </p>
+          <p>Анна Комкова</p>
+        </blockquote>
+      </section>
     </main>
   </body>
 </html>

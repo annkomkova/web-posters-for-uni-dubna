@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&family=Space+Grotesk:wght@300..700&display=swap');
 * {
   box-sizing: border-box;
 }
@@ -18,7 +19,6 @@ main {
   align-items: flex-end;
   width: 70%;
   margin: 0 auto;
-  /* background-color: #ddd; */
   background: linear-gradient(
     135deg,
     rgba(209, 209, 209, 1) 0%,
@@ -30,49 +30,101 @@ main {
   /* background: radial-gradient(circle at 100% 0%, #b6cde8, transparent 60%),
     linear-gradient(65deg, #dfdfdf, rgb(190, 190, 190) 50%); */
   border-radius: 30rem;
+  position: relative;
 }
 section {
   position: relative;
   height: 100%;
 }
+.arrow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10%;
+  height: 10%;
+  background-image: url('../images/arrow.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right top;
+  z-index: 100;
+  transition: background-image 1s ease;
+}
+.arrow:hover {
+  background-image: url('../images/arrow-hover.svg');
+  transition: background-image 1s ease;
+}
 #poster {
   width: 50%;
-  border-radius: 30rem;
+  border-radius: 30rem 0 0 30rem;
   overflow: hidden;
 }
 #description {
   width: 50%;
   height: 100%;
-  padding: 20rem;
-}
-#desription article {
+  /* padding: 20rem; */
   display: flex;
   flex-direction: column;
-  height: 100%;
   justify-content: flex-end;
-}
-#description h1 {
-  font-size: 52rem;
-  font-weight: 500;
-}
-#description p {
-  font-size: 20rem;
-}
-#description article {
-  display: flex;
-  flex-direction: column;
-  gap: 40rem;
-}
-.descriptionNames {
-  display: flex;
-  gap: 40rem;
-}
-.descriptionColumn {
-  display: flex;
-  flex-direction: column;
   gap: 20rem;
 }
-
+#description > h1,
+#description > p {
+  padding: 0 20rem;
+}
+#description h1 {
+  font-size: 30rem;
+  font-weight: 500;
+  padding-top: 20rem;
+}
+#description p {
+  font-size: 16rem;
+}
+#description .role {
+  font-size: 14rem;
+  color: #555;
+  transform: translateY(16rem);
+}
+blockquote {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1rem solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8rem 32rem rgba(0, 0, 0, 0.1);
+  border-radius: 20rem;
+  padding: 40rem;
+  position: relative;
+  z-index: 2;
+  margin-top: 30rem;
+}
+blockquote p {
+  line-height: 1.3;
+}
+blockquote::before {
+  font-family: 'Passion One', sans-serif;
+  font-weight: 400;
+  content: '"';
+  font-size: 120rem;
+  position: absolute;
+  top: -10%;
+  -webkit-text-stroke: 1rem #efefef;
+  color: rgba(255, 255, 255);
+  text-shadow: 4rem 2rem 5rem rgba(100, 100, 100, 0.5);
+}
+blockquote p:nth-of-type(2) {
+  text-align: right;
+  color: #69677c;
+  margin-top: 10rem;
+}
+@media screen and (max-width: 1279px) {
+  #description h1 {
+    font-size: 40rem;
+  }
+  #description p {
+    font-size: 22rem;
+  }
+  .blockquote::before {
+    top: -6%;
+  }
+}
 @media screen and (max-width: 768px) {
   body {
     align-items: flex-start;
@@ -80,35 +132,81 @@ section {
   main {
     flex-direction: column;
     width: 100%;
+    border-radius: 0;
+  }
+  #poster {
+    border-radius: 0 0 70rem 70rem;
   }
   section,
   #poster,
   #description {
     width: 100%;
   }
-  #description {
-    padding: 40rem;
+  #description > h1,
+  #description > p {
+    padding: 0 30rem;
   }
   #description h1 {
     font-size: 70rem;
+    padding-top: 30rem;
   }
   #description p {
     font-size: 40rem;
   }
+  #description .role {
+    font-size: 30rem;
+    transform: translateY(10rem);
+  }
+  .arrow {
+    left: 0;
+    width: 20%;
+    height: 20%;
+    background-image: url('../images/arrow-mobile.svg');
+  }
+  .arrow:hover {
+    background-image: url('../images/arrow-mobile-hover.svg');
+  }
+  blockquote {
+    padding: 60rem 40rem 30rem;
+  }
+  blockquote::before {
+    font-size: 190rem;
+  }
 }
 
 @media screen and (max-width: 500px) {
-  #description {
-    padding: 60rem;
-    margin-top: 300rem;
+  #poster {
+    border-radius: 0 0 70rem 70rem;
   }
-  #description article {
+  #description {
+    margin-top: 20rem;
     gap: 60rem;
   }
+  #description > h1,
+  #description > p {
+    padding: 0 60rem;
+  }
   #description h1 {
-    font-size: 120rem;
+    font-size: 110rem;
+    padding-top: 60rem;
   }
   #description p {
     font-size: 80rem;
+  }
+  #description .role {
+    font-size: 50rem;
+    transform: translateY(40rem);
+  }
+  blockquote {
+    padding: 100rem;
+    border-radius: 60rem;
+  }
+  blockquote::before {
+    font-size: 340rem;
+    top: -4%;
+    text-shadow: 8rem 8rem 10rem rgba(100, 100, 100, 0.3);
+  }
+  blockquote p:nth-of-type(2) {
+    margin-top: 40rem;
   }
 }

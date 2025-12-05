@@ -196,10 +196,6 @@
   main {
     width: 96%;
   }
-  #poster {
-    width: calc(1190rem / 1.6);
-    height: calc(1684rem / 1.6);
-  }
 }
 
 @media screen and (max-width: 768px) {

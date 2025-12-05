@@ -1,0 +1,230 @@
+@import 'reset.css';
+@import 'base.css';
+#poster {
+  width: calc(1190rem / 2.3);
+  height: calc(1660rem / 2.3);
+  background-image: url('../images/poster8/bg.webp');
+  background-size: cover;
+  position: relative;
+}
+article {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.eyes {
+  width: 60rem;
+  height: 60rem;
+  background-size: 240rem 60rem;
+  position: absolute;
+}
+.blink {
+  background-image: url('../images/poster8/eyes2.webp');
+  animation: desktop-move 1s steps(1) infinite alternate, opacity 20s infinite;
+}
+.move {
+  background-image: url('../images/poster8/eyes.webp');
+  animation: desktop-move 0.8s steps(1) infinite alternate, opacity 20s infinite;
+}
+.eye1 {
+  top: 57%;
+  left: 36%;
+  animation-delay: 0s, -5s;
+}
+.eye2 {
+  top: 55.8%;
+  left: 68%;
+  animation-delay: -1s;
+}
+.eye3 {
+  top: 80.5%;
+  left: 46%;
+  transform: rotate(85deg);
+  animation-delay: 0s, -3s;
+}
+.eye4 {
+  top: 76%;
+  left: 78%;
+  animation-delay: -1.2s, -12s;
+  transform: rotate(-100deg);
+}
+.eye5 {
+  top: 44.5%;
+  left: 18.5%;
+  animation-delay: 0s, -15s;
+}
+.eye6 {
+  top: 48%;
+  left: 54%;
+  transform: rotate(180deg);
+  animation-delay: -0.8s, 5s;
+}
+.eye7 {
+  top: 69.5%;
+  left: 30%;
+  transform: rotate(45deg);
+  animation-delay: -1.2s, -5s;
+}
+.eye8 {
+  top: 71%;
+  left: 63%;
+  transform: rotate(180deg);
+  animation-delay: -6s;
+}
+
+@keyframes move {
+  0% {
+    background-position-x: 0;
+  }
+  25% {
+    background-position-x: -85rem;
+  }
+  50% {
+    background-position-x: -170rem;
+  }
+  75% {
+    background-position-x: -255rem;
+  }
+}
+@keyframes desktop-move {
+  0% {
+    background-position-x: 0;
+  }
+  25% {
+    background-position-x: -60rem;
+  }
+  50% {
+    background-position-x: -120rem;
+  }
+  75% {
+    background-position-x: -180rem;
+  }
+}
+@keyframes mobile-move {
+  0% {
+    background-position-x: 0;
+  }
+  25% {
+    background-position-x: -170rem;
+  }
+  50% {
+    background-position-x: -340rem;
+  }
+  75% {
+    background-position-x: -510rem;
+  }
+}
+@keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  60.1% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  main {
+    width: 96%;
+  }
+  #poster {
+    width: calc(1190rem / 1.6);
+    height: calc(1684rem / 1.6);
+  }
+  .blink {
+    animation: move 1s steps(1) infinite alternate, opacity 20s infinite;
+  }
+  .move {
+    animation: move 0.8s steps(1) infinite alternate, opacity 20s infinite;
+  }
+  .eyes {
+    width: 85rem;
+    height: 85rem;
+    background-size: 340rem 85rem;
+  }
+  .eye1 {
+    left: 38%;
+  }
+  .eye2 {
+    left: 71%;
+  }
+  .eye3 {
+    left: 48%;
+  }
+  .eye4 {
+    left: 81%;
+  }
+  .eye5 {
+    top: 44.8%;
+    left: 19%;
+  }
+  .eye6 {
+    left: 56%;
+  }
+  .eye7 {
+    left: 32%;
+  }
+  .eye8 {
+    left: 66%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    width: 100%;
+  }
+  #poster {
+    width: 100%;
+    height: 141.42vw;
+  }
+  .eyes {
+    width: 170rem;
+    height: 170rem;
+    background-size: 680rem 170rem;
+  }
+  .blink {
+    animation: mobile-move 1s steps(1) infinite alternate, opacity 20s infinite;
+  }
+  .move {
+    animation: mobile-move 0.8s steps(1) infinite alternate,
+      opacity 20s infinite;
+  }
+  .eye1 {
+    top: 57%;
+    left: 36%;
+  }
+  .eye2 {
+    top: 55.8%;
+    left: 68%;
+  }
+  .eye3 {
+    top: 80.5%;
+    left: 46%;
+  }
+  .eye4 {
+    top: 76%;
+    left: 78%;
+  }
+  .eye5 {
+    top: 44.5%;
+    left: 18.5%;
+  }
+  .eye6 {
+    top: 48%;
+    left: 54%;
+  }
+  .eye7 {
+    top: 69.5%;
+    left: 30%;
+  }
+  .eye8 {
+    top: 71%;
+    left: 63%;
+  }
+}

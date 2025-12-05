@@ -1,0 +1,203 @@
+@import 'reset.css';
+@import 'base.css';
+#poster {
+  width: calc(1190rem / 2.3);
+  height: calc(1660rem / 2.3);
+  background-image: url('../images/poster9/bg.webp');
+  background-size: cover;
+  position: relative;
+}
+article {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+img {
+  display: block;
+}
+.nica {
+  position: absolute;
+  width: 18%;
+  left: 0;
+  bottom: 13%;
+  z-index: 2;
+}
+.nica-rect {
+  position: absolute;
+  width: 20%;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  animation: rectMove 5s infinite ease-in-out alternate;
+}
+.circle {
+  width: 50%;
+  position: absolute;
+  bottom: 12%;
+  left: 25%;
+  animation: circle 20s linear infinite;
+}
+.miniCircle {
+  width: 50rem;
+  height: 50rem;
+  background-image: url('../images/poster9/sprite-circles.webp');
+  background-size: 150rem 50rem;
+  animation: miniCircle 3s steps(1) infinite;
+  position: absolute;
+}
+.mini1 {
+  top: 60%;
+  left: 75%;
+}
+.mini2 {
+  top: 61%;
+  left: 90%;
+  animation-delay: -1s;
+}
+.mini3 {
+  top: 68%;
+  left: 85%;
+  animation-delay: -2s;
+}
+.hands {
+  position: absolute;
+  top: 8%;
+  width: 20%;
+}
+.hands.left {
+  left: 0;
+  animation: leftHand 3s ease-in infinite alternate;
+}
+.hands.right {
+  right: 0;
+  animation: rightHand 3s ease-in infinite alternate;
+}
+.text {
+  width: 28%;
+  position: absolute;
+  top: 16%;
+  left: 36%;
+  animation: text 6s linear infinite alternate;
+  transform-origin: center;
+  transform: scaleX(0);
+}
+.dot {
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  background-color: red;
+  border-radius: 100%;
+  z-index: 4;
+}
+@keyframes text {
+  0% {
+    transform: scaleX(0);
+  }
+  50% {
+    transform: scaleX(0);
+  }
+  70% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes leftHand {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 32%;
+  }
+}
+@keyframes rightHand {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: 32%;
+  }
+}
+@keyframes circle {
+  0% {
+    transform: rotate(0) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(0.7);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+@keyframes miniCircle {
+  0% {
+    background-position-x: 0;
+  }
+  33% {
+    background-position-x: -50rem;
+  }
+  64% {
+    background-position-x: -100rem;
+  }
+}
+@keyframes miniCircle-mobile {
+  0% {
+    background-position-x: 0;
+  }
+  33% {
+    background-position-x: -120rem;
+  }
+  64% {
+    background-position-x: -240rem;
+  }
+}
+@keyframes rectMove {
+  0% {
+    bottom: 0;
+  }
+  100% {
+    bottom: 58%;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  main {
+    width: 96%;
+  }
+  #poster {
+    width: calc(1190rem / 1.6);
+    height: calc(1684rem / 1.6);
+  }
+  .mini3 {
+    top: 65%;
+    left: 85%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    width: 100%;
+  }
+  #poster {
+    width: 100%;
+    height: 141.42vw;
+  }
+  .miniCircle {
+    width: 120rem;
+    height: 120rem;
+    background-size: 360rem 120rem;
+    animation: miniCircle-mobile 3s steps(1) infinite;
+  }
+  .mini3 {
+    top: 67%;
+    animation-delay: -1s;
+  }
+  .mini1 {
+    animation-delay: -2s;
+  }
+  .dot {
+    width: 16rem;
+    height: 16rem;
+  }
+}

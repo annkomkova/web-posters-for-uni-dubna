@@ -1,0 +1,189 @@
+@import 'reset.css';
+@import 'base.css';
+
+#poster {
+  width: calc(1190rem / 2.3);
+  height: calc(1660rem / 2.3);
+  background-image: url('../images/poster6/bg.webp');
+  background-size: cover;
+  position: relative;
+}
+article {
+  width: 100%;
+  height: 100%;
+}
+.text {
+  position: absolute;
+  bottom: 2.8%;
+  width: 36%;
+  height: 2.5%;
+  left: 32%;
+  overflow: hidden;
+}
+.plashka {
+  animation: text 6s steps(28) infinite alternate,
+    cursor 0.75s step-end infinite;
+  background-color: #f0f0f0;
+  width: 100%;
+  height: 100%;
+  border-left: 1px solid #333;
+}
+.tihohodka {
+  width: 40%;
+  margin: 64% auto 0;
+  display: block;
+  animation: rotate 40s linear infinite;
+}
+.el {
+  display: block;
+  position: absolute;
+  animation: scale 2s infinite alternate ease;
+  width: 10%;
+}
+.el3 {
+  bottom: 10%;
+  right: 23%;
+  animation-delay: -2s;
+}
+.el2 {
+  bottom: 20%;
+  left: 13%;
+  animation-delay: -1s;
+}
+.el1 {
+  bottom: 26%;
+  left: 16%;
+}
+.number {
+  display: block;
+  position: absolute;
+  width: 4%;
+  height: 3%;
+  background-size: cover;
+}
+.number::before {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: #fefeff;
+  height: 100%;
+  font-size: 11rem;
+  padding-right: 2rem;
+  width: max-content;
+  animation: opacity 21s infinite;
+  opacity: 0;
+}
+.n1 {
+  top: 36%;
+  left: 34%;
+  background-image: url('../images/poster6/n1.jpg');
+}
+.n2 {
+  top: 28%;
+  left: 56%;
+  background-image: url('../images/poster6/n2.jpg');
+}
+.n3 {
+  top: 62%;
+  left: 50%;
+  background-image: url('../images/poster6/n3.jpg');
+}
+.n1::before {
+  content: 'Выдерживает 30-летнее пребывание при температуре −20 °C';
+}
+.n2::before {
+  content: 'Выживает в открытом космосе 10 дней';
+  animation-delay: 7s;
+}
+.n3::before {
+  content: 'Переносит нагрев до 100 °С в течение часа';
+  animation-delay: 14s;
+}
+@keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+  31% {
+    opacity: 1;
+  }
+  36% {
+    opacity: 0;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.5);
+  }
+}
+@keyframes text {
+  0% {
+    margin-left: 100%;
+  }
+  30% {
+    margin-left: 100%;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+@keyframes cursor {
+  0% {
+    border-color: #333;
+  }
+
+  50% {
+    border-color: transparent;
+  }
+
+  100% {
+    border-color: #333;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  main {
+    width: 96%;
+  }
+  #poster {
+    width: calc(1190rem / 1.6);
+    height: calc(1684rem / 1.6);
+  }
+  .text {
+    width: 36%;
+  }
+  .number::before {
+    font-size: 15rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    width: 100%;
+  }
+  #poster {
+    width: 100%;
+    height: 141.42vw;
+  }
+  .number::before {
+    font-size: 30rem;
+  }
+}
